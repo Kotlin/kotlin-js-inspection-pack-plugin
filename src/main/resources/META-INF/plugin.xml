@@ -29,7 +29,7 @@
     <actions>
         <!-- Add your actions here -->
         <action id="com.jetbrains.migration.ExternalizeIntefaceActionId"
-                class="com.jetbrains.migration.ExternalizeInterfaceAction" text="Externalize Inteface">
+                class="com.jetbrains.migration.actions.ExternalizeInterfaceAction" text="Externalize Inteface">
             <add-to-group group-id="RefactoringMenu" anchor="first"/>
         </action>
     </actions>

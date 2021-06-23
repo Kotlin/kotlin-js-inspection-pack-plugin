@@ -1,4 +1,4 @@
-package com.jetbrains.migration
+package com.jetbrains.migration.actions
 
 import com.intellij.codeInsight.FileModificationService
 import com.intellij.openapi.editor.Editor
