@@ -1,0 +1,27 @@
+<idea-plugin>
+    <id>com.jetbrains.kotlin-js-migration-plugin</id>
+    <name>Kotlin/JS Migration</name>
+    <vendor email="viktor.noskin@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
+
+    <description><![CDATA[
+    Plugin for fast migration Space to IR compiler
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="com.jetbrains.migation.ExternalizeIntefaceActionId"
+                class="com.jetbrains.migation.ExternalizeInterfaceAction" text="Externalize Inteface">
+            <add-to-group group-id="RefactoringMenu" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>
