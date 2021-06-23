@@ -1,10 +1,10 @@
-package com.jetbrains.migation.inspections
+package com.jetbrains.migration.inspections
 
 import com.intellij.codeInspection.ProblemsHolder
 import com.intellij.psi.PsiElementVisitor
-import com.jetbrains.migation.quickfixes.AddExternalQuickFix
-import com.jetbrains.migation.react.implementsRProps
-import com.jetbrains.migation.react.implementsRState
+import com.jetbrains.migration.quickfixes.AddExternalQuickFix
+import com.jetbrains.migration.react.implementsRProps
+import com.jetbrains.migration.react.implementsRState
 import org.jetbrains.kotlin.descriptors.ClassDescriptor
 import org.jetbrains.kotlin.idea.inspections.AbstractKotlinInspection
 import org.jetbrains.kotlin.idea.project.platform

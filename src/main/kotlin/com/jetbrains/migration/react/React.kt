@@ -1,4 +1,4 @@
-package com.jetbrains.migation.react
+package com.jetbrains.migration.react
 
 import org.jetbrains.kotlin.descriptors.ClassDescriptor
 import org.jetbrains.kotlin.name.FqName
