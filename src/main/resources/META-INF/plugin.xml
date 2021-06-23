@@ -15,6 +15,15 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
+        <localInspection
+                implementationClass="com.jetbrains.migation.inspections.NonExternalRPropsInspection"
+                displayName="RProps interface problem"
+                groupPath="Kotlin,React"
+                groupName="Probable bugs"
+                enabledByDefault="true"
+                level="WARNING"
+                language="kotlin"
+        />
     </extensions>
 
     <actions>

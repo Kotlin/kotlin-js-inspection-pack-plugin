@@ -1,0 +1,42 @@
+package com.jetbrains.migation.inspections
+
+import com.intellij.codeInspection.ProblemsHolder
+import com.intellij.psi.PsiElementVisitor
+import com.jetbrains.migation.quickfixes.AddExternalQuickFix
+import com.jetbrains.migation.react.implementsRProps
+import com.jetbrains.migation.react.implementsRState
+import org.jetbrains.kotlin.descriptors.ClassDescriptor
+import org.jetbrains.kotlin.idea.inspections.AbstractKotlinInspection
+import org.jetbrains.kotlin.idea.project.platform
+import org.jetbrains.kotlin.idea.search.usagesSearch.descriptor
+import org.jetbrains.kotlin.platform.js.isJs
+import org.jetbrains.kotlin.psi.KtClass
+import org.jetbrains.kotlin.psi.KtClassOrObject
+import org.jetbrains.kotlin.psi.KtFile
+import org.jetbrains.kotlin.psi.KtVisitorVoid
+
+class NonExternalRPropsInspection : AbstractKotlinInspection() {
+    override fun buildVisitor(holder: ProblemsHolder, isOnTheFly: Boolean): PsiElementVisitor {
+        return NonExternalRPropsVisitor(holder)
+    }
+}
+
+class NonExternalRPropsVisitor(
+    private val holder: ProblemsHolder,
+) : KtVisitorVoid() {
+    override fun visitKtFile(file: KtFile) {
+        if(file.platform.isJs()) {
+            super.visitKtFile(file)
+        }
+    }
+
+    override fun visitClassOrObject(classOrObject: KtClassOrObject) {
+        if (classOrObject is KtClass && classOrObject.isInterface()) {
+            val classDescriptor = classOrObject.descriptor as? ClassDescriptor ?: return
+            if(!classDescriptor.isExternal && (classDescriptor.implementsRProps || classDescriptor.implementsRState)) {
+                val nameIdentifier = classOrObject.nameIdentifier ?: return
+                holder.registerProblem(nameIdentifier, "Interface should be external", AddExternalQuickFix)
+            }
+        }
+    }
+}
