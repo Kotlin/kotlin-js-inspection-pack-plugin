@@ -17,7 +17,6 @@ class ExternalizeInterfaceAction : IRInterfaceCodeInsightAction() {
 
     override fun invoke(project: Project, editor: Editor, file: PsiFile) {
         val targetClass = getTargetClassOrNull(editor, file) ?: return
-        println(targetClass.name)
 
         if (file is KtFile && FileModificationService.getInstance().prepareFileForWrite(targetClass.containingKtFile)) {
             if(targetClass.hasModifier(KtTokens.EXTERNAL_KEYWORD).not()) {
