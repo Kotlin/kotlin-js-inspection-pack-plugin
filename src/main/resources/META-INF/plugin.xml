@@ -1,6 +1,6 @@
 <idea-plugin>
-    <id>com.jetbrains.kotlin-js-migration-plugin</id>
-    <name>Kotlin/JS Migration</name>
+    <id>com.jetbrains.kotlin-js-inspection-pack-plugin</id>
+    <name>Kotlin/JS Inspection Pack</name>
     <vendor email="viktor.noskin@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
     <description><![CDATA[

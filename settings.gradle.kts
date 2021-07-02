@@ -1,2 +1,2 @@
-rootProject.name = "kotlin-js-migration-plugin"
+rootProject.name = "kotlin-js-inspection-pack-plugin"
 
