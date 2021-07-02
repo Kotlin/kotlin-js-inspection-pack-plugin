@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>com.jetbrains.kotlin-js-inspection-pack-plugin</id>
+    <id>org.jetbrains.kotlin-js-inspection-pack-plugin</id>
     <name>Kotlin/JS Inspection Pack</name>
     <vendor email="viktor.noskin@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
@@ -16,7 +16,7 @@
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
         <localInspection
-                implementationClass="com.jetbrains.migration.inspections.NonExternalRPropsInspection"
+                implementationClass="org.jetbrains.migration.inspections.NonExternalRPropsInspection"
                 displayName="RProps interface problem"
                 groupPath="Kotlin,React"
                 groupName="Probable bugs"
@@ -28,8 +28,8 @@
 
     <actions>
         <!-- Add your actions here -->
-        <action id="com.jetbrains.migration.ExternalizeIntefaceActionId"
-                class="com.jetbrains.migration.actions.ExternalizeInterfaceAction" text="Externalize Inteface">
+        <action id="org.jetbrains.migration.ExternalizeIntefaceActionId"
+                class="org.jetbrains.migration.actions.ExternalizeInterfaceAction" text="Externalize Inteface">
             <add-to-group group-id="RefactoringMenu" anchor="first"/>
         </action>
     </actions>

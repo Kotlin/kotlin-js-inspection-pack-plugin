@@ -3,7 +3,7 @@ plugins {
     kotlin("jvm") version "1.5.20-RC"
 }
 
-group = "com.jetbrains"
+group = "org.jetbrains"
 version = "0.0.1"
 
 repositories {

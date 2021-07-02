@@ -1,4 +1,4 @@
-package com.jetbrains.migration.core
+package org.jetbrains.migration.core
 
 import com.intellij.codeInsight.CodeInsightActionHandler
 import com.intellij.codeInsight.actions.CodeInsightAction

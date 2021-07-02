@@ -1,10 +1,10 @@
-package com.jetbrains.migration.actions
+package org.jetbrains.migration.actions
 
 import com.intellij.codeInsight.FileModificationService
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiFile
-import com.jetbrains.migration.core.IRInterfaceCodeInsightAction
+import org.jetbrains.migration.core.IRInterfaceCodeInsightAction
 import org.jetbrains.kotlin.lexer.KtTokens
 import org.jetbrains.kotlin.psi.KtClass
 import org.jetbrains.kotlin.psi.KtClassOrObject

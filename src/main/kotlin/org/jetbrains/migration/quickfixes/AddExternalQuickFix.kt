@@ -1,4 +1,4 @@
-package com.jetbrains.migration.quickfixes
+package org.jetbrains.migration.quickfixes
 
 import com.intellij.codeInsight.FileModificationService
 import com.intellij.codeInspection.LocalQuickFix
