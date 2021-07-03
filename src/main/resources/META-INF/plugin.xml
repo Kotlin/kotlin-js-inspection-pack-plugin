@@ -4,7 +4,7 @@
     <vendor email="viktor.noskin@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
     <description><![CDATA[
-    Plugin for fast migration Space to IR compiler
+    Inspections and quick fixes for K/JS and <a href="https://github.com/JetBrains/kotlin-wrappers">kotlin-wrappers</a>
     ]]></description>
     <idea-version since-build="203"/>
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
