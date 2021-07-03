@@ -31,7 +31,7 @@ class NonExternalRPropsVisitor(
     }
 
     override fun visitClassOrObject(classOrObject: KtClassOrObject) {
-        if (classOrObject is KtClass && classOrObject.isInterface()) {
+        if (classOrObject.containingKtFile.platform.isJs() && classOrObject is KtClass && classOrObject.isInterface()) {
             val classDescriptor = classOrObject.descriptor as? ClassDescriptor ?: return
             if(!classDescriptor.isExternal && (classDescriptor.implementsRProps || classDescriptor.implementsRState)) {
                 val nameIdentifier = classOrObject.nameIdentifier ?: return
