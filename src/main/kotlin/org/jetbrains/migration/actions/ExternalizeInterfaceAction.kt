@@ -4,6 +4,7 @@ import com.intellij.codeInsight.FileModificationService
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiFile
+import org.jetbrains.kotlin.idea.util.application.runWriteAction
 import org.jetbrains.migration.core.IRInterfaceCodeInsightAction
 import org.jetbrains.kotlin.lexer.KtTokens
 import org.jetbrains.kotlin.psi.KtClass
@@ -20,7 +21,7 @@ class ExternalizeInterfaceAction : IRInterfaceCodeInsightAction() {
 
         if (file is KtFile && FileModificationService.getInstance().prepareFileForWrite(targetClass.containingKtFile)) {
             if(targetClass.hasModifier(KtTokens.EXTERNAL_KEYWORD).not()) {
-                targetClass.addModifier(KtTokens.EXTERNAL_KEYWORD)
+                runWriteAction { targetClass.addModifier(KtTokens.EXTERNAL_KEYWORD) }
             }
         }
      }
