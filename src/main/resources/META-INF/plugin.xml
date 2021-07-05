@@ -28,9 +28,5 @@
 
     <actions>
         <!-- Add your actions here -->
-        <action id="org.jetbrains.migration.ExternalizeInterfaceActionId"
-                class="org.jetbrains.migration.actions.ExternalizeInterfaceAction" text="Externalize Interface">
-            <add-to-group group-id="RefactoringMenu" anchor="first"/>
-        </action>
     </actions>
 </idea-plugin>
