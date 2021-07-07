@@ -24,6 +24,15 @@
                 level="WARNING"
                 language="kotlin"
         />
+        <localInspection
+                implementationClass="org.jetbrains.migration.inspections.NonVarPropertyInExternalInterfaceInspection"
+                displayName="External interface should contains only var properties"
+                groupPath="Kotlin,React"
+                groupName="Probable bugs"
+                enabledByDefault="true"
+                level="WARNING"
+                language="kotlin"
+        />
     </extensions>
 
     <actions>
