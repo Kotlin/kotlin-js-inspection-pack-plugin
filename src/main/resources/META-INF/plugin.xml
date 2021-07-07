@@ -33,6 +33,15 @@
                 level="WARNING"
                 language="kotlin"
         />
+        <localInspection
+                implementationClass="org.jetbrains.migration.inspections.NonNullableBooleanPropertyInExternalInterfaceInspection"
+                displayName="External interface should contains only nullable boolean properties"
+                groupPath="Kotlin,React"
+                groupName="Probable bugs"
+                enabledByDefault="true"
+                level="WARNING"
+                language="kotlin"
+        />
     </extensions>
 
     <actions>
