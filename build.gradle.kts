@@ -1,6 +1,6 @@
 plugins {
     id("org.jetbrains.intellij") version "1.0"
-    kotlin("jvm") version "1.5.20-RC"
+    kotlin("jvm") version "1.5.20"
 }
 
 group = "org.jetbrains"
