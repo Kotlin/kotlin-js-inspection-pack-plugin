@@ -14,10 +14,7 @@ import org.jetbrains.kotlin.idea.inspections.AbstractKotlinInspection
 import org.jetbrains.kotlin.idea.project.platform
 import org.jetbrains.kotlin.idea.search.usagesSearch.descriptor
 import org.jetbrains.kotlin.platform.js.isJs
-import org.jetbrains.kotlin.psi.KtClass
-import org.jetbrains.kotlin.psi.KtClassOrObject
-import org.jetbrains.kotlin.psi.KtFile
-import org.jetbrains.kotlin.psi.KtVisitorVoid
+import org.jetbrains.kotlin.psi.*
 
 class NonExternalRPropsInspection : AbstractKotlinInspection() {
     override fun buildVisitor(holder: ProblemsHolder, isOnTheFly: Boolean): PsiElementVisitor {
@@ -35,11 +32,22 @@ class NonExternalRPropsVisitor(
     }
 
     override fun visitClassOrObject(classOrObject: KtClassOrObject) {
-        if (classOrObject.containingKtFile.platform.isJs() && classOrObject is KtClass && classOrObject.isInterface()) {
+        if (classOrObject.containingKtFile.platform.isJs()) {
             val classDescriptor = classOrObject.descriptor as? ClassDescriptor ?: return
-            if(!classDescriptor.isExternal && (classDescriptor.implementsRProps || classDescriptor.implementsRState)) {
-                val nameIdentifier = classOrObject.nameIdentifier ?: return
-                holder.registerProblem(nameIdentifier, "Interface should be external", AddExternalQuickFix)
+            if (classDescriptor.implementsRProps || classDescriptor.implementsRState) {
+                if(classOrObject is KtClass) {
+                    if (classOrObject.isInterface() && !classDescriptor.isExternal) {
+                        val nameIdentifier = classOrObject.nameIdentifier ?: return
+                        holder.registerProblem(nameIdentifier, "Interface should be external", AddExternalQuickFix)
+                    } else {
+                        val classKeyword = classOrObject.getClassKeyword() ?: return
+                        holder.registerProblem(classKeyword, "Class should be external interface")
+                    }
+                }
+                if(classOrObject is KtObjectDeclaration){
+                    val objectKeyword = classOrObject.getObjectKeyword() ?: return
+                    holder.registerProblem(objectKeyword, "Object should be external interface")
+                }
             }
         }
     }
