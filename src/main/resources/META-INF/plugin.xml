@@ -4,7 +4,54 @@
     <vendor email="viktor.noskin@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
     <description><![CDATA[
-    Inspections and quick fixes for Kotlin/JS and <a href="https://github.com/JetBrains/kotlin-wrappers">kotlin-wrappers</a>
+    <h1>Kotlin/JS Inspection Pack</h1>
+    <p>
+    This plugin adds useful inspections, intentions, and quick-fixes for working with Kotlin/JS projects. It provides
+    helpful functionality when you’re building new applications using Kotlin/JS, and it helps you migrate existing
+    applications to the <a href="https://kotlinlang.org/docs/js-ir-compiler.html">Kotlin/JS IR compiler</a>.
+    </p>
+    <p>The following features are available with this plugin:</p>
+    <ul>
+        <li>Convert JS and React-related classes and interfaces to external interfaces</li>
+    </ul>
+    <p>
+    Using Kotlin interfaces and classes (including data classes) that derive from pure JS classes, such as React's
+    <b>RState</b> and <b>RProps</b>, can cause <b>ClassCastExceptions</b>. This plugin allows you to
+    convert such classes and interfaces to external interfaces.
+    </p>
+    <ul>
+        <li>Convert properties of external interfaces to var</li>
+    </ul>
+    <p>
+    Properties of <a href="https://kotlinlang.org/docs/js-interop.html#external-interfaces">external interfaces</a>
+     in Kotlin/JS code can't be read-only (val) properties.
+    </p>
+    <p>
+    The plugin contains a quick-fix that allows you to convert the read-only properties of an external interface
+    into mutable var properties.
+    </p>
+    <ul>
+        <li>Make boolean properties nullable in external interfaces</li>
+    </ul>
+    <p>
+    In JavaScript, a boolean variable can be null or undefined. Kotlin requires you to explicitly specify the
+    nullability of boolean variables in external interfaces to prevent ClassCastExceptions.
+    </p>
+    <p>
+    Now there is an inspection that will highlight boolean properties in external interfaces and offer to make
+    them nullable (<b>Boolean?</b>).
+    </p>
+    <h2>Feedback</h2>
+    <p>
+    If you encounter any issues with the inspections in the plugin, please report them in our issue
+    <a href="https://youtrack.jetbrains.com/newIssue?project=kt&draftId=25-3384480">tracker</a>.
+    For problems with Kotlin/JS, please report them by submitting a ticket in the official Kotlin YouTrack.
+    </p>
+    <h2>Further reading</h2>
+    <p>
+    Take a look at this additional information on the <a href="https://kotlinlang.org/docs/js-ir-compiler.html">
+    new Kotlin/JS IR backend</a>, and read the <a href="https://kotlinlang.org/docs/js-ir-migration.html#convert-js-and-react-related-classes-and-interfaces-to-external-interfaces">Kotlin/JS IR migration guide</a>.
+    </p>
     ]]></description>
     <idea-version since-build="203"/>
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
