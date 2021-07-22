@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "org.jetbrains"
-version = "0.0.2"
+version = "0.0.3"
 
 repositories {
     mavenCentral()
@@ -28,5 +28,6 @@ tasks.getByName<org.jetbrains.intellij.tasks.PatchPluginXmlTask>("patchPluginXml
 tasks {
     patchPluginXml {
         sinceBuild.set("203")
+        untilBuild.set("212.*")
     }
 }
