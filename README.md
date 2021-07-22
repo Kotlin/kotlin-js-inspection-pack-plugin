@@ -1,5 +1,7 @@
 # Kotlin/JS Inspection Pack
 
+![plugin usage screenshot](static/screenshot.png)
+
 This plugin adds useful inspections, intentions, and quick-fixes for working with Kotlin/JS projects. It provides
 helpful functionality when you’re building new applications using Kotlin/JS, and it helps you migrate existing
 applications to the [Kotlin/JS IR compiler](https://kotlinlang.org/docs/js-ir-compiler.html).
