@@ -41,6 +41,13 @@
     Now there is an inspection that will highlight boolean properties in external interfaces and offer to make
     them nullable (<b>Boolean?</b>).
     </p>
+    <ul>
+        <li>Convert functions with receivers in external interfaces to regular functions</li>
+    </ul>
+    <p>
+    External declarations can't contain functions with receivers, such as extension functions or properties with corresponding functional types.
+    This plugin allows you to convert such functions and properties into regular functions by moving the receiver object to an argument.
+    </P>
     <h2>Feedback</h2>
     <p>
     If you encounter any issues with the inspections in the plugin, please report them in our issue
@@ -87,6 +94,15 @@
                 groupName="Probable bugs"
                 enabledByDefault="true"
                 level="WARNING"
+                language="kotlin"
+        />
+        <localInspection
+                implementationClass="org.jetbrains.migration.inspections.FunctionsWithReceiverInExternalInterfaceInspection"
+                displayName="External interface can't contains property type of function with receiver"
+                groupPath="Kotlin"
+                groupName="Probable bugs"
+                enabledByDefault="true"
+                level="INFORMATION"
                 language="kotlin"
         />
     </extensions>
