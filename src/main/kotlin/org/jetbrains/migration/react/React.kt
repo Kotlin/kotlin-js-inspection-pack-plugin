@@ -14,9 +14,10 @@ private val REACT_PACKAGE_ID = Name.identifier("react")
 private val REACT_PACKAGE = FqName(REACT_PACKAGE_ID.identifier)
 private val R_PROPS = REACT_PACKAGE.child(Name.identifier("RProps"))
 private val R_STATE = REACT_PACKAGE.child(Name.identifier("RState"))
+private val STATE = REACT_PACKAGE.child(Name.identifier("State"))
 
 val ClassDescriptor.implementsRState: Boolean
-    get() = getSuperInterfaces().any { it.fqNameSafe == R_STATE || it.implementsRState }
+    get() = getSuperInterfaces().any { it.fqNameSafe == STATE || it.fqNameSafe == R_STATE || it.implementsRState }
 
 val ClassDescriptor.implementsRProps: Boolean
     get() = getSuperInterfaces().any { it.fqNameSafe == R_PROPS || it.implementsRProps }
