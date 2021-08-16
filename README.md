@@ -30,11 +30,6 @@ boolean variables in external interfaces to prevent ClassCastExceptions.
 Now there is an inspection that will highlight boolean properties in external interfaces and offer to make them
 nullable (`Boolean?`).
 
-* Convert functions with receivers in external interfaces to regular functions
-
-External declarations can't contain functions with receivers, such as extension functions or properties with corresponding functional types.
-This plugin allows you to convert such functions and properties into regular functions by moving the receiver object to an argument.
-
 ## Feedback
 
 If you encounter any issues with the inspections in the plugin, please report them in our issue
