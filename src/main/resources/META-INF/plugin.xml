@@ -64,7 +64,7 @@
         <!-- Add your extensions here -->
         <localInspection
                 implementationClass="org.jetbrains.migration.inspections.NonExternalRPropsInspection"
-                displayName="RProps interface problem"
+                displayName="Non-external classifier extending State or Props"
                 groupPath="Kotlin,React"
                 groupName="Probable bugs"
                 enabledByDefault="true"
