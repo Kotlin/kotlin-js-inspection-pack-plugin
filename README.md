@@ -33,7 +33,7 @@ nullable (`Boolean?`).
 ## Feedback
 
 If you encounter any issues with the inspections in the plugin, please report them in our issue
-[tracker](https://youtrack.jetbrains.com/newIssue?project=kt&draftId=25-3384480). For problems with Kotlin/JS, please
+[tracker](https://youtrack.jetbrains.com/newIssue?project=KT). For problems with Kotlin/JS, please
 report them by submitting a ticket in the official Kotlin YouTrack.
 
 ## Further reading
