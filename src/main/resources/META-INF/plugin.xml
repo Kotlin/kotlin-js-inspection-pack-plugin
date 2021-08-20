@@ -82,7 +82,7 @@
         />
         <localInspection
                 implementationClass="org.jetbrains.migration.inspections.NonNullableBooleanPropertyInExternalInterfaceInspection"
-                displayName="External interface should contains only nullable boolean properties"
+                displayName="External interface contains non-nullable boolean property"
                 groupPath="Kotlin"
                 groupName="Probable bugs"
                 enabledByDefault="true"
