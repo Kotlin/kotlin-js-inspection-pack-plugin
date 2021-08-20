@@ -34,7 +34,7 @@ nullable (`Boolean?`).
 
 If you encounter any issues with the inspections in the plugin, please report them in our issue
 [tracker](https://youtrack.jetbrains.com/newIssue?project=KT). For problems with Kotlin/JS, please
-report them by submitting a ticket in the official Kotlin YouTrack.
+report them the same way.
 
 ## Further reading
 
