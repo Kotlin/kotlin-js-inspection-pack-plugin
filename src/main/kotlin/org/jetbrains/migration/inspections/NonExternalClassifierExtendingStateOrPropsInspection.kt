@@ -18,7 +18,7 @@ import org.jetbrains.kotlin.psi.KtClass
 import org.jetbrains.kotlin.psi.KtObjectDeclaration
 import org.jetbrains.kotlin.psi.classOrObjectVisitor
 
-class NonExternalRPropsInspection : AbstractKotlinInspection() {
+class NonExternalClassifierExtendingStateOrPropsInspection : AbstractKotlinInspection() {
 
     override fun buildVisitor(
         holder: ProblemsHolder, isOnTheFly: Boolean

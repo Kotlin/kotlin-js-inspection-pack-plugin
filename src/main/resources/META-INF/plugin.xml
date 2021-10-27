@@ -63,7 +63,7 @@
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
         <localInspection
-                implementationClass="org.jetbrains.migration.inspections.NonExternalRPropsInspection"
+                implementationClass="org.jetbrains.migration.inspections.NonExternalClassifierExtendingStateOrPropsInspection"
                 displayName="Non-external classifier extending State or Props"
                 groupPath="Kotlin,React"
                 groupName="Probable bugs"
