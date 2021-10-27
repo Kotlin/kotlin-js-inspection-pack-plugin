@@ -1,6 +1,6 @@
 plugins {
-    id("org.jetbrains.intellij") version "1.1.6"
-    kotlin("jvm") version "1.5.30"
+    id("org.jetbrains.intellij") version "1.2.1"
+    kotlin("jvm") version "1.5.31"
 }
 
 group = "org.jetbrains"
@@ -16,7 +16,7 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version.set("2021.2.1")
+    version.set("2021.2.3")
     plugins.set(listOf("java","Kotlin"))
 }
 tasks.getByName<org.jetbrains.intellij.tasks.PatchPluginXmlTask>("patchPluginXml") {
