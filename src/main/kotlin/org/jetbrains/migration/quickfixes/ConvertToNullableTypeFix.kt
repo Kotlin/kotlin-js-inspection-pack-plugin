@@ -11,9 +11,10 @@ import org.jetbrains.kotlin.idea.core.setType
 import org.jetbrains.kotlin.nj2k.postProcessing.type
 import org.jetbrains.kotlin.psi.KtProperty
 import org.jetbrains.kotlin.types.typeUtil.makeNullable
+import org.jetbrains.migration.KotlinJsInspectionPackBundle
 
 class ConvertToNullableTypeFix : LocalQuickFix {
-    override fun getName(): String = "Convert to nullable type"
+    override fun getName(): String = KotlinJsInspectionPackBundle.message("convert.to.nullable.type")
 
     override fun getFamilyName(): String = name
 

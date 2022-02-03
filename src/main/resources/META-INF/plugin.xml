@@ -64,7 +64,8 @@
         <!-- Add your extensions here -->
         <localInspection
                 implementationClass="org.jetbrains.migration.inspections.NonExternalClassifierExtendingStateOrPropsInspection"
-                displayName="Non-external classifier extending State or Props"
+                bundle="messages.KotlinJSInspectionPackBundle"
+                key="non.external.classifier.extending.state.or.props.name"
                 groupPath="Kotlin,React"
                 groupName="Probable bugs"
                 enabledByDefault="true"
@@ -73,7 +74,8 @@
         />
         <localInspection
                 implementationClass="org.jetbrains.migration.inspections.NonVarPropertyInExternalInterfaceInspection"
-                displayName="External interface contains val property"
+                bundle="messages.KotlinJSInspectionPackBundle"
+                key="external.interface.contains.val.property.name"
                 groupPath="Kotlin"
                 groupName="Probable bugs"
                 enabledByDefault="true"
@@ -82,7 +84,8 @@
         />
         <localInspection
                 implementationClass="org.jetbrains.migration.inspections.NonNullableBooleanPropertyInExternalInterfaceInspection"
-                displayName="External interface contains non-nullable boolean property"
+                bundle="messages.KotlinJSInspectionPackBundle"
+                key="external.interface.contains.non.nullable.property.name"
                 groupPath="Kotlin"
                 groupName="Probable bugs"
                 enabledByDefault="true"

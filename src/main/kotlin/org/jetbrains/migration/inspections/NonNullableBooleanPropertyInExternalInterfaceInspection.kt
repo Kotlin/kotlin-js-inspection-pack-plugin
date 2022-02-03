@@ -16,6 +16,7 @@ import org.jetbrains.kotlin.psi.KtProperty
 import org.jetbrains.kotlin.psi.declarationVisitor
 import org.jetbrains.kotlin.psi.psiUtil.containingClassOrObject
 import org.jetbrains.kotlin.types.typeUtil.isBoolean
+import org.jetbrains.migration.KotlinJsInspectionPackBundle
 import org.jetbrains.migration.quickfixes.ConvertToNullableTypeFix
 
 class NonNullableBooleanPropertyInExternalInterfaceInspection : AbstractKotlinInspection() {
@@ -28,7 +29,9 @@ class NonNullableBooleanPropertyInExternalInterfaceInspection : AbstractKotlinIn
         val property = declaration as? KtProperty ?: return@declarationVisitor
         val type = property.type() ?: return@declarationVisitor
         if (parent.isInterface() && parent.hasModifier(KtTokens.EXTERNAL_KEYWORD) && type.isBoolean() && !type.isMarkedNullable) {
-            holder.registerProblem(property, "Boolean property in external interface should be nullable", ConvertToNullableTypeFix())
+            holder.registerProblem(property,
+                KotlinJsInspectionPackBundle.message("boolean.property.in.external.interface.should.be.nullable"),
+                ConvertToNullableTypeFix())
         }
     }
 }

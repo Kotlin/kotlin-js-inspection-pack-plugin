@@ -18,6 +18,7 @@ import org.jetbrains.kotlin.psi.KtClass
 import org.jetbrains.kotlin.psi.KtProperty
 import org.jetbrains.kotlin.psi.declarationVisitor
 import org.jetbrains.kotlin.psi.psiUtil.containingClassOrObject
+import org.jetbrains.migration.KotlinJsInspectionPackBundle
 import org.jetbrains.migration.react.implementsRProps
 import org.jetbrains.migration.react.implementsRState
 
@@ -30,11 +31,12 @@ class NonVarPropertyInExternalInterfaceInspection : AbstractKotlinInspection() {
         val parent = declaration.containingClassOrObject as? KtClass ?: return@declarationVisitor
         val property = declaration as? KtProperty ?: return@declarationVisitor
         val parentClassDescriptor = parent.descriptor as? ClassDescriptor ?: return@declarationVisitor
-        val parentImplementsReactStateOrProps = parentClassDescriptor.implementsRProps || parentClassDescriptor.implementsRState
+        val parentImplementsReactStateOrProps =
+            parentClassDescriptor.implementsRProps || parentClassDescriptor.implementsRState
         if (parent.isInterface() && parent.hasModifier(KtTokens.EXTERNAL_KEYWORD) && parentImplementsReactStateOrProps && !property.isVar) {
             holder.registerProblem(
                 property.valOrVarKeyword,
-                "Property in external interface should be var",
+                KotlinJsInspectionPackBundle.message("property.in.external.interface.should.be.var"),
                 IntentionWrapper(ChangeVariableMutabilityFix(property, true), declaration.containingFile)
             )
         }
