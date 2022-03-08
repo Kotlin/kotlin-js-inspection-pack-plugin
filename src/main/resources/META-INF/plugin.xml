@@ -88,7 +88,7 @@
                 key="external.interface.contains.non.nullable.property.name"
                 groupPath="Kotlin"
                 groupName="Probable bugs"
-                enabledByDefault="true"
+                enabledByDefault="false"
                 level="WARNING"
                 language="kotlin"
         />
