@@ -1,10 +1,10 @@
 plugins {
-    id("org.jetbrains.intellij") version "1.3.1"
-    kotlin("jvm") version "1.6.10"
+    id("org.jetbrains.intellij") version "1.6.0"
+    kotlin("jvm") version "1.6.21"
 }
 
 group = "org.jetbrains"
-version = "0.0.9"
+version = "0.0.10"
 
 repositories {
     mavenCentral()
@@ -28,6 +28,7 @@ tasks.getByName<org.jetbrains.intellij.tasks.PatchPluginXmlTask>("patchPluginXml
 tasks {
     patchPluginXml {
         sinceBuild.set("203")
-        untilBuild.set("221.*")
+        untilBuild.set("222.*")
     }
 }
+
