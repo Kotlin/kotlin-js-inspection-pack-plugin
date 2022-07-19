@@ -28,6 +28,6 @@ tasks.getByName<org.jetbrains.intellij.tasks.PatchPluginXmlTask>("patchPluginXml
 tasks {
     patchPluginXml {
         sinceBuild.set("203")
-        untilBuild.set("222.*")
+        untilBuild.set("*")
     }
 }
