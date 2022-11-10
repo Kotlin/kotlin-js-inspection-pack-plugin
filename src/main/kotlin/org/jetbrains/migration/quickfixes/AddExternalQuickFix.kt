@@ -19,12 +19,8 @@ object AddExternalQuickFix : LocalQuickFix {
 
     override fun applyFix(project: Project, descriptor: ProblemDescriptor) {
         val psiElement = descriptor.psiElement.parent
-
-        if (FileModificationService.getInstance().preparePsiElementForWrite(psiElement)) {
-            if (psiElement is KtClass) {
-                psiElement.addModifier(KtTokens.EXTERNAL_KEYWORD)
-            }
+        if (psiElement is KtClass) {
+            psiElement.addModifier(KtTokens.EXTERNAL_KEYWORD)
         }
     }
-
 }
