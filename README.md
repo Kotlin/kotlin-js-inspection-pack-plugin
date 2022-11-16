@@ -1,5 +1,13 @@
 # Kotlin/JS Inspection Pack
 
+## Deprecation warning
+
+All features of this plugin have been moved into the main IDEA Kotlin plugin, and will be available starting with IDEA 2023.1 (a.k.a IDEA platform 231), and further. These new IDEA versions will not, therefore, suggest installing of this plugin.
+
+You can still download and use the plugin with older IDEA versions.
+
+## Plugin description
+
 ![plugin usage screenshot](static/screenshot.png)
 
 This plugin adds useful inspections, intentions, and quick-fixes for working with Kotlin/JS projects. It provides
