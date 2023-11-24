@@ -6,6 +6,8 @@ All features of this plugin have been moved into the main IDEA Kotlin plugin, an
 
 You can still download and use the plugin with older IDEA versions.
 
+The repository itself is archived and no longer supported.
+
 ## Plugin description
 
 ![plugin usage screenshot](static/screenshot.png)
